@@ -1360,44 +1360,6 @@ message.author.send(`**مدة الرابط : يـوم
 
 
 
-const moment = require('moment');
-var prefix = "!";//البرفكس
-
-client.on('message', msg => {
- if(msg.content.startsWith(prefix + "bot")) {
-let embed24 = new Discord.RichEmbed()   
-   .setThumbnail(client.user.avatarURL)
-   .setColor("RANDOM")  
-   .setTitle(`🤖**Information about**🤖 || ${client.user.tag}`, true)
-   .addField("📜**Name + Tag**📜", client.user.tag, true)
-   .addField(`***Prefix Bot***`,`**${prefix}**`, true)
-   .addField("🤖**Bot Join Servers**🤖", client.guilds.size, true)
-   .addField("👥**Sender**👥", msg.author.tag, true)
-   .addField("🤖🆔 *Bot ID** 🆔🤖 ", client.user.id, true)
-   .addField("📆**Bot Created At**📆", `${moment(client.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(client.user.createdAt).fromNow()}\``, true)
-   .addField("🤖**User**🤖", client.users.size, true)
-  
-   .setFooter(`${msg.author.tag}`, `${msg.author.avatarURL}`, true)
-msg.channel.sendEmbed(embed24)
-}
- });
-
-const moment = reqiure("moment");
-client.on("message", msg => {
-var prefix = "!"//البرفكس
-    if (msg.content.startsWtih(prefix + "id")) {
-let embed = new Discord.RichEmbed()
-     .setColor("RANDOM")
-     .setAuthor(msg.author.username, msg.author.avatarURL)
-     .setTitle('👥Your Information👥')
-     .addField("📜Name + Tag📜", msg.author.tag, true)
-     .setThumbnail(msg.author.avatarURL)
-     .addField('Your ID', msg.author.id, true)
-     .addField('📆Account Created At📆',${moment(msg.author.createdAt).format('D/M/YYYY h:mm a')} **\n** \${moment(msg.author.createdAt).fromNow()}``, true)
-     .setFooter(msg.guild.name, msg.guild.iconURL, true)
-     msg.channel.sendEmbed(embed);
-    }
-  });
 
 
 client.login("NDcxMzY2NzkwNjMxNTIyMzA1.DtBzvw.U4ctZxGQeCd_TyiSQnrpGt_gXS0");
