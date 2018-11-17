@@ -1098,6 +1098,36 @@ var prefix = "$";
    
       channel.sendEmbed(embed);
 });
+
+
+
+client.on('message', message =>{
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let prefix = "$"//البرفكس
+
+if(cmd === `${prefix}sugg`) {
+    var suggestMessage = message.content.substring(8)
+    let suggestEMBED = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setThumbnail(message.author.avatarURL)
+    .setTitle("اقتراح جديد!!")
+    .setDescription(`الاقتراح **${args}**`)
+    .setFooter(`صحاب الاقتراح : ${message.author.tag}`);
+    message.delete().catch(O_o=>{}) 
+    let suggests = message.guild.channels.find(`name`, "suggests");
+    if (!suggests) return message.channel.send("You should make A **suggests** channel!")
+    suggests.send(suggestEMBED).then(msgS => {
+msgS.react("✅")
+msgS.react("❌")   
+})
+
+}
+
+});
+
+
  
  
 client.login("NDcxMzY2NzkwNjMxNTIyMzA1.DtBzvw.U4ctZxGQeCd_TyiSQnrpGt_gXS0");
