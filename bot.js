@@ -1078,47 +1078,6 @@ var prefix = "$";
 
 
 
-
-
-
-
-
-client.on('guildMemberAdd', member => {
-    var embed = new Discord.RichEmbed()
-    .setAuthor(member.user.username, member.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .setTitle(`عضو جديد`)
-    .setDescription(`اهلا بك في السيرفر`)
-    .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
-    .setColor('BLACK')
-    .setFooter('SOON Bot', '')
-
-var channel =member.guild.channels.find('name', 'welcome')
-if (!channel) return;
-channel.send({embed : embed});
-});
-
-client.on('guildMemberRemove', member => {
-    var embed = new Discord.RichEmbed()
-    .setAuthor(member.user.username, member.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .setTitle(`خرج عضو`)
-    .setDescription(`الى اللقاء...`)
-    .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
-    .setColor('RED')
-    .setFooter(`SOON BOT`, '')
-
-var channel =member.guild.channels.find('name', 'welcome')
-if (!channel) return;
-channel.send({embed : embed});
-});
-
-
-
-
-
-
-
  client.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', 'welcome');
     let memberavatar = member.user.avatarURL
@@ -1134,7 +1093,7 @@ channel.send({embed : embed});
     .addField('•🕣|Time Create » مدة انشاء حسابك', member.user.createdAt.toLocaleString(), true)
  
                                        
-     .setFooter("LegendGang")
+     .setFooter("SOON")
         .setTimestamp()
    
       channel.sendEmbed(embed);
