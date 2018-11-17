@@ -1116,7 +1116,7 @@ if(cmd === `${prefix}sugg`) {
     .setDescription(`الاقتراح **${args}**`)
     .setFooter(`صحاب الاقتراح : ${message.author.tag}`);
     message.delete().catch(O_o=>{}) 
-    let suggests = message.guild.channels.find(`name`, "suggests");
+    let suggests = message.guild.channels.find(`name`, "suggestions");
     if (!suggests) return message.channel.send("You should make A **suggests** channel!")
     suggests.send(suggestEMBED).then(msgS => {
 msgS.react("✅")
