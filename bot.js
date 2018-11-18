@@ -1244,11 +1244,11 @@ if(!message.channel.guild) return message.channel.send('**هذا الأمر فق
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 message.channel.sendMessage('جار ارسال الرسالة |✅')
 client.users.forEach(m =>{
-m.sendMessage(${user})
+m.sendMessage(args)
 })
 }
 });
 
-
+${user}
 
 client.login("NDcxMzY2NzkwNjMxNTIyMzA1.DtBzvw.U4ctZxGQeCd_TyiSQnrpGt_gXS0");
