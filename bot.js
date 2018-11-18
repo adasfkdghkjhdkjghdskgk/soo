@@ -1249,6 +1249,6 @@ m.sendMessage(args)
 }
 });
 
-${user}
+
 
 client.login("NDcxMzY2NzkwNjMxNTIyMzA1.DtBzvw.U4ctZxGQeCd_TyiSQnrpGt_gXS0");
