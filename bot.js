@@ -1276,7 +1276,6 @@ if (!args) return message.reply('**يجب عليك كتابة كلمة او جم
 client.users.forEach(m =>{
 m.sendMessage(args)
 })
-}
 });
 
 
