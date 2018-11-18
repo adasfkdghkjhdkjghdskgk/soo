@@ -287,73 +287,6 @@ client.on('message', function(msg) {
     }
   });
 
-  
-
-
-
-client.on('message' , message => {
-
-    if (message.content === "$invite") {
-        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
-     const embed = new Discord.RichEmbed()
- .setColor("RANDOM")
- .setThumbnail(client.user.avatarURL)     
- .setDescription("Add me" + `
- **
-رابط البوت | https://discordapp.com/api/oauth2/authorize?client_id=471366790631522305&permissions=0&redirect_uri=https%3A%2F%2Fdiscord.gg%2Fqggj6DB&scope=bot
- **
-`);
-  message.author.sendEmbed(embed);
-   }
-});
-
-
-
-
-client.on('message' , message => {
-
-    if (message.content === "$support") {
-        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
-     const embed = new Discord.RichEmbed()
- .setColor("RANDOM")
- .setThumbnail(client.user.avatarURL)     
- .setDescription(" ***welcome To server support*** " + `
- **
-رابط السيرفر | https://discord.gg/kpt36J
- **
-`);
-  message.author.sendEmbed(embed);
-   }
-});
-
-
-
-
-
-
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === prefix + "own") {
-
-
- message.author.sendMessage(`
- __By__: 🅻🅼🆂|ADAM|أدم#5810
-
-Server Support :https://discord.gg/quchvgS
-
-https://discordapp.com/api/oauth2/authorize?client_id=471366790631522305&permissions=0&redirect_uri=https%3A%2F%2Fdiscord.gg%2Fqggj6DB&scope=bot
-`);
-
-message.channel.send('**تم الارسال في الخاص**');
-
-    }
-});
-
-
-
-
-
-
 
 client.on('message', msg => {
     if(msg.author.bot) return;
@@ -770,7 +703,7 @@ client.on('guildMemberAdd', member => {
     const ei = invites[member.guild.id];
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "😍أرحبو😍");
+    const stewart = member.guild.channels.find("name", "wlecome");
      stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
    //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   }); 
@@ -920,9 +853,9 @@ client.on('message', message => {
   
  
  
-  if (message.content.startsWith(prefix +'bc')) {
+  if (message.content.startsWith(prefix +'$$$bc')) {
           if (!args[0]) {
-message.channel.send("**$bc <message>**");
+message.channel.send("**$$$bc <message>**");
 return;
 }
 message.guild.members.forEach(m => {
@@ -1257,7 +1190,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 
  client.on('message', message => {
-	    var prefix = "-";
+	    var prefix = "$";
               if(!message.channel.guild) return;
     if(message.content.startsWith(prefix + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
