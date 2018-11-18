@@ -1190,7 +1190,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 
  client.on('message', message => {
-	    var prefix = "$";
+	    var prefix = "$$$$$";
               if(!message.channel.guild) return;
     if(message.content.startsWith(prefix + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
@@ -1232,6 +1232,54 @@ message.author.send(`**مدة الرابط : يـوم
     })
     }
     });
+
+
+
+client.on('message', message => {
+    if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('$bc')){
+if(!message.author.id === '380650390657695744') return;
+if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+message.channel.sendMessage('جار ارسال الرسالة |✅')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
+
+
+
+
+
+client.on('message', message => {
+    if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('$$$$bc')){
+if(!message.author.id === '380650390657695744') return;
+if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
+    msg.react('✅')
+    .then(() => msg.react('❌'))
+    .then(() =>msg.react('✅'))
+    
+    let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+    let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
+    
+    let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
+    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
+ reaction1.on("collect", r => {
+    message.channel.send(`**☑ | Done ... The Broadcast Message Has Been Sent For __${message.guild.members.size}__ Members**`).then(m => m.delete(5000));
+    message.guild.members.forEach(m => {
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
+
+
 
 
 
