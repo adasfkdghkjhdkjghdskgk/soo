@@ -1259,4 +1259,5 @@ m.sendMessage(args)
 
 
 
-client.login("NDcxMzY2NzkwNjMxNTIyMzA1.DtBzvw.U4ctZxGQeCd_TyiSQnrpGt_gXS0");
+client.login(process.env.BOT_TOKEN);
+
