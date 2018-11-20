@@ -6,13 +6,7 @@ client.user.setGame(`البرفيكس $ BY|ADAM|أدم#5810`,"https://www.twitch
   console.log(' Bot Is Online')
   console.log('---------------')
 });
-client.on('message', message => {
-     if (message.content === ".servers") {
-     let embed = new Discord.RichEmbed()
-  .setColor("#0000FF")
-  .addField("**Server: **" , client.guilds.size)
-  message.channel.sendEmbed(embed);
-    }
+
 
 
 
