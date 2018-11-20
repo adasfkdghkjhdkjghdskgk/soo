@@ -14,42 +14,7 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
-if (message.content === '&help') {
-              var embed  = new Discord.RichEmbed()
-                .addField("**LINKS**" ,":no_entry_sign: تم اضافه منع الروابط :no_entry_sign: ")
-                .addField("broadcast (bc)" ,"**الاستخدام:** ``$broadcast <الرساله> , $bc <الرساله>``")
-                .addField("**BAN**" ,"**الاستخدام:** ``&ban <المستخدم>``")
-                .addField("**KICK**" ,"**الاستخدام:** ``&kick <المستخدم> ``")
-                .addField("**emoji_chat**" ,"**الاستخدام:** ``&emoji <المستخدم> ``")
-                .addField("**ِAVATAR**" ,"**الاستخدام:** ``&avatar``")
-                .addField("**INFO**", "**الأستخدام :** ``&info``")
-                .addField("**ID**" ,"**ال��ستخدام:** ``&id``")
-                .addField("**SERVER**" ,"**الاستخدام:** ``&server``")
-                .addField("**INVITE**" ,"**الاستخدام:** ``&invite <لأضافه البوت لأى سيرفر>``")
-                .addField("**SUPPORT**" ,"**الاستخدام:** ``&suppport <سيرفر دعم الفنى>``")
-                .addField("**CLEAR**" ,"**الاستخدام:** ``&clear <العدد>``")
-                .addField("**PING**", "**الأستخدام:** ``&ping``")
-                .addField("**SERVERNAME**", "**الأستخدام:** ``&servername``")
-				.addField("**dt**", "**الأستخدام:** ``$dt``")
-				.addField("**member**", "**الأستخدام:** ``&member``")
-				.addField("**animal**", "**الأستخدام:** ``&animal``")
-				.addField("**mute**", "**الأستخدام:** ``&mute``")
-				.addField("**unmute**", "**الأستخدام:** ``&unmute``")
-				.addField("**say**", "**الأستخدام:** ``&say``")
-				.addField("**clear**", "**الأستخدام:** ``&clear``")
-				.addField("**bot**", "**الأستخدام:** ``&bot``")
-                .addField("**NO INVITE LINKE**","تم اضافة خاصية منع الانفيتات ")
-                .addField("**LOGIN**" , " تم اضافة خاصية التفعيل لطلب تشغيلها في السيرفر كلم المبيرمجين ")
-                .setColor('RANDOM')
-.setColor('RANDOM')
-  message.author.sendEmbed(embed);
-    }
-});
+
 
 
 client.on('ready', () => {
@@ -57,7 +22,7 @@ client.on('ready', () => {
 });
          client.on('message', message => {
             if (message.content === 'السلام عليكم') {
-              message.channel.send('**وعليكم السلام ورحمة الله وبركاته**');
+              message.channel.send('**:heart:وعليكم السلام ورحمة الله وبركاته:heart:**');
               message.channel.sendFile("");
                
 
@@ -70,7 +35,7 @@ client.on('ready', () => {
 });
          client.on('message', message => {
             if (message.content === 'سلام عليكم') {
-              message.channel.send('**وعليكم السلام ورحمة الله وبركاته**');
+              message.channel.send('**:heart:وعليكم السلام ورحمة الله وبركاته:heart: **');
               message.channel.sendFile("");
                
 
@@ -83,7 +48,7 @@ client.on('ready', () => {
 });
          client.on('message', message => {
             if (message.content === 'هلا') {
-              message.channel.send('**هلا ولله**');
+              message.channel.send('**هلا:heart:ولله**');
               message.channel.sendFile("");
                
 
@@ -286,31 +251,6 @@ client.on('message', function(msg) {
 
     }
   });
-
-
-client.on('message', msg => {
-    if(msg.author.bot) return;
-    
-    if(msg.content === '$sr') {
-      client.guilds.forEach(g => {
-        
-        let l = g.id
-        g.channels.get(g.channels.first().id).createInvite({
-          maxUses: 5,
-          maxAge: 86400
-        }).then(i => msg.channel.send(`
-        **
-        Invite Link : <https://discord.gg/${i.code}>
-        Server : ${g.name} | Id : ${g.id} 
-        Owner ID : ${g.owner.id}
-        **
-        `))
-  
-  
-      })
-    }
-    
-  })
  
 
 
@@ -335,19 +275,19 @@ client.on("message", message => {
 
 💎『اوامر عامة』💎
                         
-💎$server 『معلومات عن السيرفر』                      
+💎$server  『معلومات عن السيرفر』                     
 
-💎$servers 『علشان تشوف البوت بكم سيرفر اون لاين』  
+💎$رابط   『لاخذ رابط السيرفير』
+
+💎$new  『لفتح تذكرا』
+
+💎$servers 『علشان تشوف البوت بكم سيرفر اون لاين
 
 💎$bot 『لمعرف البوت بكم سيرفر』
-
-💎$date 『لمعرفه التاريخ』
 
 💎$ping 『لمعرفه سرعه البوت』
 
 💎$members 『معلومات عن الاعضاء』
-
-💎$embed 『خاصيه غرد لكن بغير طريقه』
 
 💎$id 『لرؤيات البرفايل حقق 』
 
@@ -363,11 +303,7 @@ client.on("message", message => {
 
 👑$clear 『لمسح الشات برقم』
 
-👑$bc  『خيارات البرودكاست』 
-
 👑$rooms 『لمعرفه عدد رومات السيرفر』
-
-👑$bc  『برود كاست』
 
 👑$clear 『مسح شات』
 
@@ -375,14 +311,9 @@ client.on("message", message => {
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-💎『الدعم الفني والمساعدة』💎
+💎『مصمم البوت』💎
 
-$invite | القسم الاول لي اضافه البوت 
-
-$support| القسم الثاني  الدعم الفني و المساعدة
-
-القسم الثالث مصمم البوت |🅻🅼🆂|ADAM|أدم#5810
-
+|ADAM|أدم#5810
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
@@ -414,17 +345,17 @@ client.on("message", message => {
 
 💎『اوامر عامة』💎
                         
-💎$server 『معلومات عن السيرفر』                      
+💎$server 『معلومات عن السيرفر』                     
 
-💎$bot 『لمعرف البوت بكم سيرفر』
+💎$رابط   『عشان تاخد رابط السيرفر 』
 
-💎$date 『لمعرفه التاريخ』
+💎$new   『عشان تفتح تذكرا』
+
+💎$bot 『لمعرف البوت بكم سيرفر
 
 💎$ping 『لمعرفه سرعه البوت』
 
 💎$members 『معلومات عن الاعضاء』
-
-💎$embed 『خاصيه غرد لكن بغير طريقه』
 
 💎$id 『لرؤيات البرفايل حقق 』
 
@@ -432,16 +363,11 @@ client.on("message", message => {
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 	  
+💎『مصمم البوت』💎
 
-💎『الدعم الفني والمساعدة』💎
-
-$invite | القسم الاول لي اضافه البوت 
-
-$support| القسم الثاني  الدعم الفني و المساعدة
-
-القسم الثالث مصمم البوت | 🅻🅼🆂|ADAM|أدم#5810
+|ADAM|أدم#5810
  
-
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 `)
 
@@ -472,30 +398,20 @@ client.on("message", message => {
 
 👑$clear 『لمسح الشات برقم』
 
-👑$edit  『لتعديل رساله 』
-
-👑$delet  『كـود يحذف الـروم سواء صوتي او كتابي』
-
-👑$bc  『خيارات البرودكاست』 
-
 👑$rooms 『لمعرفه عدد رومات السيرفر』
 
-👑$bc  『برود كاست』
+👑$clear 『مسح شات
 
-👑$clear 『مسح شات』
+👑$roles 『لمعرفة عدد الرتب』
 
 👑$res  『لتوقيف البوت وتشغيلو من جديد』
 
-● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●   
 
-	  
+💎『مصمم البوت』💎
+|ADAM|أدم#5810
 
-💎『الدعم الفني والمساعدة』💎
-
-$invite | القسم الاول لي اضافه البوت 
-
-$support| القسم الثاني  الدعم الفني و المساعدة
-قسم الثالث مصمم البوت🅻🅼🆂|ADAM|أدم#5810
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●   
 
 
 
@@ -703,7 +619,7 @@ client.on('guildMemberAdd', member => {
     const ei = invites[member.guild.id];
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "wlecome");
+    const stewart = member.guild.channels.find("name", "wle");
      stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
    //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   }); 
@@ -714,43 +630,6 @@ client.on('guildMemberAdd', member => {
 client.on('guildMemberAdd', member=> {
     member.addRole(member.guild.roles.find("name","MEMBER"));
     });
-
-
-
-
-
-
-	
-
-	
-	
-client.on('message', message => {
-var prefix = "$$";
-
-    if (message.author.id === client.user.id) return;
-    if (message.guild) {
-   let embed = new Discord.RichEmbed()
-    let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'bc') {
-    if (!args[1]) {
-message.channel.send("**$$bc <message>**");
-return;
-}
-        message.guild.members.forEach(m => {
-   if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            var bc = new Discord.RichEmbed()
-            .addField('» السيرفر :', `${message.guild.name}`)
-            .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
-            .addField(' » الرسالة : ', args)
-            .setColor('#ff0000')
-            // m.send(`[${m}]`);
-            m.send(`${m}`,{embed: bc});
-        });
-    }
-    } else {
-        return;
-    }
-});
 
 
 
@@ -846,31 +725,6 @@ if (message.content.startsWith('$clear')) { //xRGRx .. By Julian
 
 
 
-client.on('message', message => {
-   var prefix = "$";// البرفكس
-    let args = message.content.split(' ').slice(1).join(' ');
-   
-  
- 
- 
-  if (message.content.startsWith(prefix +'$$$bc')) {
-          if (!args[0]) {
-message.channel.send("**$$$bc <message>**");
-return;
-}
-message.guild.members.forEach(m => {
-  if(!message.guild.members.get(message.author.id).hasPermission('ADMINISTRATOR')) return message.channel.send('انت لا تمتلك صلاحية ADMINISTRATOR')
-var embed = new Discord.RichEmbed()   
-.addField("السيرفر", message.guild.name, true)
-.addField("المرسل", message.author.tag, true)
-.addField("الرسالة", `${args}`, true)
-m.sendEmbed(embed);
- 
-});
-  }
- 
-});
-
 
 
 
@@ -944,9 +798,9 @@ if (message.content.startsWith(prefix + "new")) {
 if (message.content.startsWith(prefix + "close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
-        message.channel.send(`هل أنت متأكد؟ بعد التأكيد ، لا يمكنك عكس هذا الإجراء!\n للتأكيد ، اكتب\`$close it\`. سيؤدي ذلك إلى مهلة زمنية في غضون 10 ثوانٍ وإلغائها`)
+        message.channel.send(`هل أنت متأكد؟ بعد التأكيد ، لا يمكنك عكس هذا الإجراء!\n للتأكيد ، اكتب\`y\`. سيؤدي ذلك إلى مهلة زمنية في غضون 10 ثوانٍ وإلغائها`)
             .then((m) => {
-                message.channel.awaitMessages(response => response.content === '$close it', {
+                message.channel.awaitMessages(response => response.content === '$y', {
                         max: 1,
                         time: 10000,
                         errors: ['time'],
@@ -1184,76 +1038,6 @@ message.author.send(`**مدة الرابط : يـوم
 
     }
 });
-
-
-
-
-
- client.on('message', message => {
-	    var prefix = "$$$$$";
-              if(!message.channel.guild) return;
-    if(message.content.startsWith(prefix + 'bc')) {
-    if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
-    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "Speed Bot";
-    let request = `Requested By ${message.author.username}`;
-    if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
-    msg.react('✅')
-    .then(() => msg.react('❌'))
-    .then(() =>msg.react('✅'))
-    
-    let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
-    let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
-    
-    let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
-    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
- reaction1.on("collect", r => {
-    message.channel.send(`**☑ | Done ... The Broadcast Message Has Been Sent For __${message.guild.members.size}__ Members**`).then(m => m.delete(5000));
-    message.guild.members.forEach(m => {
-  
-  var bc = new
-       Discord.RichEmbed()
-       .setColor('RANDOM')
-       .setTitle('Broadcast')
-       .addField('سيرفر', message.guild.name)
-       .addField('المرسل', message.author.username)
-       .addField('الرسالة', args)
-       .setThumbnail(message.author.avatarURL)
-       .setFooter(copy, client.user.avatarURL);
-    m.send({ embed: bc })
-    msg.delete();
-    })
-    })
-    reaction2.on("collect", r => {
-    message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
-    msg.delete();
-    })
-    })
-    }
-    });
-
-
-
-client.on('message', message => {
-    if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('$bc')){
-if(!message.author.id === '380650390657695744') return;
-if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
-message.channel.sendMessage('جار ارسال الرسالة |✅')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
-
-
-
-
-
-
 
 
 
