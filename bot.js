@@ -610,23 +610,6 @@ client.on('message' , message => {
 
 
 
-
-
-
-
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "wle");
-     stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
-   //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
-  }); 
-});
-
-
-
 client.on('guildMemberAdd', member=> {
     member.addRole(member.guild.roles.find("name","MEMBER"));
     });
@@ -887,73 +870,6 @@ var prefix = "$";
 });
 
 
-
-client.on('message', message =>{
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let prefix = "$"//البرفكس
-
-if(cmd === `${prefix}sugg`) {
-    var suggestMessage = message.content.substring(8)
-    let suggestEMBED = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setThumbnail(message.author.avatarURL)
-    .setTitle("اقتراح جديد!!")
-    .setDescription(`الاقتراح **${args}**`)
-    .setFooter(`صحاب الاقتراح : ${message.author.tag}`);
-    message.delete().catch(O_o=>{}) 
-    let suggests = message.guild.channels.find(`name`, "suggests");
-    if (!suggests) return message.channel.send("You should make A **suggests** channel!")
-    suggests.send(suggestEMBED).then(msgS => {
-msgS.react("✅")
-msgS.react("❌")   
-})
-
-}
-
-});
-
-
-
-client.on('message', msg => {
-
-    if (msg.content == '$join') {
-        if (msg.member.voiceChannel) {
-
-     if (msg.member.voiceChannel.joinable) {
-         msg.member.voiceChannel.join().then(msg.react('white_check_mark'));
-     }
-    }
-}
-})
-client.on('ready', () => { //code bot not leave room voice //Bot Is Online
-    client.channels.get("513463636681949184").join(); //by :n3k4a 
-    });
- 
- 
-
-
-client.on('message', message => {
-    if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('bc-users')){
-if(!message.author.id === '380650390657695744') return;
-message.channel.sendMessage('جار ارسال الرسالة |✅')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
-
-
-
-
-
-
-
-
-
 client.on('message', ( message ) => {
   if(message.author.bot) return;
 
@@ -1044,4 +960,3 @@ message.author.send(`**مدة الرابط : يـوم
 
 
 client.login(process.env.BOT_TOKEN);
-
