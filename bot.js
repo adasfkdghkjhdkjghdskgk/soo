@@ -639,7 +639,7 @@ if (message.content.startsWith('$مسح')) { //xRGRx .. By Julian
   
   
   client.on('message', message => {       
-if (message.content.startsWith('$clear')) { //xRGRx .. By Julian
+if (message.content.startsWith('$$clear')) { //xRGRx .. By Julian
     if(!message.channel.guild) return message.reply('⛔ | This Command For Servers Only!'); 
         if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('⛔ | You dont have **MANAGE_MESSAGES** Permission!');
         if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send('⛔ | I dont have **MANAGE_MESSAGES** Permission!');
@@ -950,7 +950,31 @@ message.author.send(`**مدة الرابط : يـوم
 });
 
 
-
+client.on('message', message => {
+var prefix = "$"
+    if (message.content.startsWith(prefix + 'clear')) {
+      if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ليس لديك برمشن[*MANAGE_MESSAGES*] `).catch(console.error);
+  message.delete()
+  if(!message.channel.guild) return;
+  let args = message.content.split(" ").slice(1);
+  
+  const messagecount = parseInt(args.join(' '));
+  
+  message.channel.fetchMessages({
+  
+  limit: messagecount
+  
+  }).then(messages => message.channel.bulkDelete(messages));
+  message.channel.sendMessage("", {embed: {
+    title: "``✏️✅ تــم مسح الشات ``",
+    color: 0x06DF00,
+    footer: {
+    
+    }
+    }}).then(msg => {msg.delete(3000)});
+  };
+  
+  });
 
 
 client.login(process.env.BOT_TOKEN);
